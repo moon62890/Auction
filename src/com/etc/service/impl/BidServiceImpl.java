@@ -2,15 +2,15 @@ package com.etc.service.impl;
 
 import java.util.List;
 
-import com.etc.dao.BidDao;
 import com.etc.entity.Mybidding;
+import com.etc.service.BidService;
 
 /**
  * ∏ÇòÀòIÑ’œ‡ÍPServiceåç¨FÓê
  * @author HongPeiQi
  *
  */
-public class BidServiceImpl implements BidDao {
+public class BidServiceImpl implements BidService {
 
 	@Override
 	public boolean addBid(Mybidding bid) {

@@ -2,15 +2,15 @@ package com.etc.service.impl;
 
 import java.util.List;
 
-import com.etc.dao.BankDao;
 import com.etc.entity.BankCard;
+import com.etc.service.BankService;
 
 /**
  * „y––ø®Ωâ∂®œ‡ÍPòIÑ’Service åç¨FÓê
  * @author HongPeiQi
  *
  */
-public class BankServiceImpl implements BankDao {
+public class BankServiceImpl implements BankService {
 
 	@Override
 	public boolean addBankCard(BankCard card) {

@@ -2,15 +2,15 @@ package com.etc.service.impl;
 
 import java.util.List;
 
-import com.etc.dao.GoodsDao;
 import com.etc.entity.Goods;
+import com.etc.service.GoodsService;
 
 /**
  * …Ã∆∑œ‡ÍPòIÑ’Service åç¨FÓê
  * @author HongPeiQi
  *
  */
-public class GoodsServiceImpl implements GoodsDao {
+public class GoodsServiceImpl implements GoodsService {
 
 	@Override
 	public boolean addGoods(Goods goods) {

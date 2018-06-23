@@ -2,15 +2,15 @@ package com.etc.service.impl;
 
 import java.util.List;
 
-import com.etc.dao.OrderDao;
 import com.etc.entity.Order;
+import com.etc.service.OrderService;
 
 /**
  * Ó††ÎÏàêP˜I„ÕService Œ¬Fî
  * @author HongPeiQi
  *
  */
-public class OrderServiceImpl implements OrderDao {
+public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public boolean addOrder(Order order) {

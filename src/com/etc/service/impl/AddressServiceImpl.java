@@ -1,14 +1,14 @@
 package com.etc.service.impl;
 
-import com.etc.dao.AddressDao;
 import com.etc.entity.ShoppingAddress;
+import com.etc.service.AddressService;
 
 /**
  * 收貨地址操作相關Service實現類 
  * @author HongPeiQi
  *
  */
-public class AddressServiceImpl implements AddressDao {
+public class AddressServiceImpl implements AddressService {
 
 	@Override
 	public boolean addAddress(ShoppingAddress address) {
