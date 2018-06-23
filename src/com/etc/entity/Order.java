@@ -7,14 +7,15 @@ package com.etc.entity;
  */
 public class Order {
 	
-	private int order_id;
-	private int user_id;
-	private int goods_id;
-	private String address_id;
-	private String senddate;
-	private String payment;
-	private double sendprice;
-	private int orderstate;
+	private int order_id; //订单编号 自增
+	private int user_id; //用户编号
+	private int goods_id; //商品编号
+	private String address_id; //送货地址编号
+	private String senddate; //发货时间
+	private String payment; //付款方式
+	private double sendprice; //运费
+	private int orderstate; //订单状态(1交易成功0交易关闭2未付款）
+	private String order_date;//订购日期
 	
 	/**
 	 * 默认构造
@@ -36,7 +37,7 @@ public class Order {
 	 * @param goods_buydate
 	 */
 	public Order(int user_id, int goods_id, String address_id, String senddate, String payment, double sendprice,
-			int orderstate, String goods_buydate) {
+			int orderstate, String order_date) {
 		super();
 		this.user_id = user_id;
 		this.goods_id = goods_id;
@@ -45,7 +46,7 @@ public class Order {
 		this.payment = payment;
 		this.sendprice = sendprice;
 		this.orderstate = orderstate;
-		this.goods_buydate = goods_buydate;
+		this.order_date = order_date;
 	}
 	
 	/**
@@ -61,7 +62,7 @@ public class Order {
 	 * @param goods_buydate
 	 */
 	public Order(int order_id, int user_id, int goods_id, String address_id, String senddate, String payment,
-			double sendprice, int orderstate, String goods_buydate) {
+			double sendprice, int orderstate, String order_date) {
 		super();
 		this.order_id = order_id;
 		this.user_id = user_id;
@@ -71,7 +72,7 @@ public class Order {
 		this.payment = payment;
 		this.sendprice = sendprice;
 		this.orderstate = orderstate;
-		this.goods_buydate = goods_buydate;
+		this.order_date = order_date;
 	}
 	
 	public int getOrder_id() {
@@ -122,20 +123,20 @@ public class Order {
 	public void setOrderstate(int orderstate) {
 		this.orderstate = orderstate;
 	}
-	public String getGoods_buydate() {
-		return goods_buydate;
-	}
-	public void setGoods_buydate(String goods_buydate) {
-		this.goods_buydate = goods_buydate;
-	}
-	private String goods_buydate;
 
+	public String getOrder_date() {
+		return order_date;
+	}
+
+	public void setOrder_date(String order_date) {
+		this.order_date = order_date;
+	}
 
 	@Override
 	public String toString() {
 		return "Order [order_id=" + order_id + ", user_id=" + user_id + ", goods_id=" + goods_id + ", address_id="
 				+ address_id + ", senddate=" + senddate + ", payment=" + payment + ", sendprice=" + sendprice
-				+ ", orderstate=" + orderstate + ", goods_buydate=" + goods_buydate + "]";
+				+ ", orderstate=" + orderstate + ", order_date=" + order_date + "]";
 	}
 	
 	
