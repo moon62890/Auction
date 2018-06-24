@@ -2,6 +2,8 @@ package com.etc.dao.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.etc.dao.OrderDao;
 import com.etc.entity.Order;
 
@@ -10,6 +12,7 @@ import com.etc.entity.Order;
  * @author HongPeiQi
  *
  */
+@Repository(value="orderDao")
 public class OrderDaoImpl implements OrderDao {
 
 	@Override

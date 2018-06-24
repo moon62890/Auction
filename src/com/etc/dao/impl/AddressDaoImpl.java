@@ -1,5 +1,7 @@
 package com.etc.dao.impl;
 
+import org.springframework.stereotype.Repository;
+
 import com.etc.dao.AddressDao;
 import com.etc.entity.ShoppingAddress;
 
@@ -8,6 +10,7 @@ import com.etc.entity.ShoppingAddress;
  * @author HongPeiQi
  *
  */
+@Repository(value="addressDao")
 public class AddressDaoImpl implements AddressDao {
 
 	@Override

@@ -2,6 +2,8 @@ package com.etc.dao.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.etc.dao.BidDao;
 import com.etc.entity.Mybidding;
 
@@ -10,6 +12,7 @@ import com.etc.entity.Mybidding;
  * @author HongPeiQi
  *
  */
+@Repository(value="bidDao")
 public class BidDaoImpl implements BidDao {
 
 	@Override

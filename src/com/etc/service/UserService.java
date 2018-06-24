@@ -3,6 +3,7 @@ package com.etc.service;
 import java.util.List;
 
 import com.etc.entity.Users;
+import com.etc.util.PageData;
 
 /**
  * 用戶相關Service
@@ -26,9 +27,12 @@ public interface UserService {
 	public boolean updateUser(Users user);	
 	/**
 	 * 查詢所有用戶
+	 * @param page 當前頁數
+	 * @param pageSize 總頁數
+	 * @param param 參數
 	 * @return
 	 */
-	public List<Users> queryUsers();
+	public PageData<Users> queryUsers(Integer page, Integer pageSize, Object... param);
 	
 	/**
 	 * 依據用戶編號->查詢用戶詳細資訊
@@ -49,5 +53,5 @@ public interface UserService {
 	 * @param user_state
 	 * @return
 	 */
-	public List<Users> queryUserByState(int user_state);
+	public PageData<Users> queryUserByState(Integer pageNo, Integer pageSize,int user_state);
 }

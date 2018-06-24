@@ -4,11 +4,14 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import com.etc.dao.UserDao;
+import com.etc.dao.impl.UserDaoImpl;
 import com.etc.entity.Users;
 import com.etc.service.UserService;
+import com.etc.util.PageData;
 
 /**
  * ”√ëÙœ‡ÍPServiceåç¨FÓê
@@ -18,6 +21,8 @@ import com.etc.service.UserService;
 @Service(value="userService")
 public class UserServiceImpl implements UserService {
 
+	Logger logger = Logger.getLogger(UserServiceImpl.class);
+	
 	@Resource(name="userDao")
 	private UserDao userDao;
 	
@@ -34,27 +39,27 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<Users> queryUsers() {
+	public PageData<Users> queryUsers(Integer page, Integer pageSize, Object... param) {
 		// TODO Auto-generated method stub
-		return null;
+		return userDao.queryUsers(page, pageSize, null);
 	}
 	
 	@Override
 	public Users queryUsersById(int user_id) {
 		// TODO Auto-generated method stub
-		return null;
+		return userDao.queryUsersById(user_id);
 	}
 
 	@Override
 	public List<Users> queryUsersByName(String user_realName) {
 		// TODO Auto-generated method stub
-		return null;
+		return userDao.queryUsersByName(user_realName);
 	}
 
 	@Override
-	public List<Users> queryUserByState(int user_state) {
+	public PageData<Users> queryUserByState(Integer page, Integer pageSize,int user_state) {
 		// TODO Auto-generated method stub
-		return null;
+		return userDao.queryUserByState(page, pageSize, user_state);
 	}
 
 }

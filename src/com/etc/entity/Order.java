@@ -14,7 +14,7 @@ public class Order {
 	private String senddate; //发货时间
 	private String payment; //付款方式
 	private double sendprice; //运费
-	private int orderstate; //订单状态(1交易成功0交易关闭2未付款）
+	private int order_state; //订单状态(1交易成功0交易关闭2未付款）
 	private String order_date;//订购日期
 	
 	/**
@@ -37,7 +37,7 @@ public class Order {
 	 * @param goods_buydate
 	 */
 	public Order(int user_id, int goods_id, String address_id, String senddate, String payment, double sendprice,
-			int orderstate, String order_date) {
+			int order_state, String order_date) {
 		super();
 		this.user_id = user_id;
 		this.goods_id = goods_id;
@@ -45,7 +45,7 @@ public class Order {
 		this.senddate = senddate;
 		this.payment = payment;
 		this.sendprice = sendprice;
-		this.orderstate = orderstate;
+		this.order_state = order_state;
 		this.order_date = order_date;
 	}
 	
@@ -62,7 +62,7 @@ public class Order {
 	 * @param goods_buydate
 	 */
 	public Order(int order_id, int user_id, int goods_id, String address_id, String senddate, String payment,
-			double sendprice, int orderstate, String order_date) {
+			double sendprice, int order_state, String order_date) {
 		super();
 		this.order_id = order_id;
 		this.user_id = user_id;
@@ -71,7 +71,7 @@ public class Order {
 		this.senddate = senddate;
 		this.payment = payment;
 		this.sendprice = sendprice;
-		this.orderstate = orderstate;
+		this.order_state = order_state;
 		this.order_date = order_date;
 	}
 	
@@ -117,11 +117,11 @@ public class Order {
 	public void setSendprice(double sendprice) {
 		this.sendprice = sendprice;
 	}
-	public int getOrderstate() {
-		return orderstate;
+	public int getOrder_state() {
+		return order_state;
 	}
-	public void setOrderstate(int orderstate) {
-		this.orderstate = orderstate;
+	public void setOrder_state(int order_state) {
+		this.order_state = order_state;
 	}
 
 	public String getOrder_date() {
@@ -136,7 +136,7 @@ public class Order {
 	public String toString() {
 		return "Order [order_id=" + order_id + ", user_id=" + user_id + ", goods_id=" + goods_id + ", address_id="
 				+ address_id + ", senddate=" + senddate + ", payment=" + payment + ", sendprice=" + sendprice
-				+ ", orderstate=" + orderstate + ", order_date=" + order_date + "]";
+				+ ", order_state=" + order_state + ", order_date=" + order_date + "]";
 	}
 	
 	

@@ -2,6 +2,8 @@ package com.etc.dao.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.etc.dao.BankDao;
 import com.etc.entity.BankCard;
 
@@ -10,6 +12,7 @@ import com.etc.entity.BankCard;
  * @author HongPeiQi
  *
  */
+@Repository(value="bankDao")
 public class BankDaoImpl implements BankDao {
 
 	@Override

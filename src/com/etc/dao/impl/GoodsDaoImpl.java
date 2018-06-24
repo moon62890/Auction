@@ -2,6 +2,8 @@ package com.etc.dao.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.etc.dao.GoodsDao;
 import com.etc.entity.Goods;
 
@@ -10,6 +12,7 @@ import com.etc.entity.Goods;
  * @author HongPeiQi
  *
  */
+@Repository(value="goodsDao")
 public class GoodsDaoImpl implements GoodsDao {
 
 	@Override
