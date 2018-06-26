@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.dao.BankDao">
+	<!-- 添加銀行卡 -->
+	<update id="addBankCard" parameterType="BankCard">
+		INSERT INTO bankcard
+		VALUES(NULL,#{user_id},#{bankcard_number},NOW(),NULL);
+	</update>
+
+	<!-- 更新銀行卡 -->
+	<update id="updateBankCard" parameterType="BankCard" useGeneratedKeys="true" keyProperty="bankcard_id">
+		UPDATE BankCard
+		<set>
+			<if test="bankcard_number!=null">bankcard_number=#{bankcard_number},</if>
+			<if test="consignee_tel!=null">consignee_tel=#{consignee_tel}</if>
+		</set>
+		,bankcard_modified = NOW();
+		WHERE bankcard_id=#{bankcard_id}
+	</update>
+
+	<!-- 刪除銀行卡 -->
+	<delete id="deleteBankCard">
+		DELETE FROM BankCard WHERE bankcard_id=#{bankcard_id};
+	</delete>
+	
+	<!-- 查詢銀行卡詳細資料 -->
+	<select id="queryBankCard" resultType="BankCard" >
+		SELECT * FROM BankCard WHERE bankcard_id=#{bankcard_id};		
+	</select>
+
+</mapper>
