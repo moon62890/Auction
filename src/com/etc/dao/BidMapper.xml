@@ -4,5 +4,24 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.etc.dao.BidDao">
 
- 	
+	<!-- 添加競標紀錄 -->
+	<insert id="addBid" parameterType="Mybidding" useGeneratedKeys="true" keyProperty="bid_id">
+		INSERT INTO mybidding VALUES(Null,#{user_id},#{goods_id},#{bid_state},NOW(),#{bid_price});
+	</insert>
+	
+	<!-- 根據競標紀錄編號->查詢競標紀錄詳細資料 -->
+	<select id="queryMyBiddingByBidId" resultType="Mybidding">	
+		SELECT * FROM mybidding WHERE bid_id=#{bid_id};		
+	</select>
+	
+	<!-- 更新競標紀錄 -->
+	<update id="updateMyBidding">
+		UPDATE mybidding
+		<set>
+			<if test="bid_state!=null">bid_state=#{bid_state},</if>
+			<if test="bid_price!=null">bid_price=#{bid_price}</if>
+		</set>
+		WHERE bid_id=#{bid_id};
+	</update>
+
 </mapper>
