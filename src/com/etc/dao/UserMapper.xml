@@ -3,5 +3,26 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.etc.dao.UserDao">
-
+ <select id="queryUsersById" resultType="Users">
+    select * from users where user_id = #{id}
+  </select>
+  <select id="queryUsers" resultType="Users" >
+  	select * from users;
+  </select>
+  <select id="queryUsersByName" resultType="Users">
+  	select * from users where user_realname like  concat('%',#{user_realname},'%')
+  </select>
+  <insert id="addUser" parameterType="Users" useGeneratedKeys="true" keyProperty="user_id"> 	
+  	insert into users values(null,#{user_acc},#{user_pwd},null,#{user_tel},null,null,null,null,1,now(),null);
+  </insert>
+  <delete id="delUser">
+  	delete from users where user_id=#{user_id};
+  </delete> 
+  <update id="updateUser" parameterType="Users">
+  	update users set 
+  	user_realname = #{user_realname},
+    user_balance = #{user_balance},
+    user_email = #{user_email}
+  	where user_id = #{user_id}
+  </update>
 </mapper>
