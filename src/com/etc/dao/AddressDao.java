@@ -29,5 +29,7 @@ public interface AddressDao {
 	 * @return True„h³ı³É¹¦  False„h³ıÊ§”¡
 	 */
 	public boolean deleteAddress(int address_id);
+	
+	
 
 }
