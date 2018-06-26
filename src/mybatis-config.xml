@@ -3,13 +3,25 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<!-- 去和屬性文件關聯 -->
+	<!-- 去和屬性文件關聯 之後就可從中讀取數據庫配置的訊息-->
 	<properties resource="db.properties"></properties>
-	<!-- 設置別名 -->
+	<!-- 設置選項 -->
+	<settings>
+		<!-- 配置logImpl 指定實現工具為log4j -->
+		<setting name="logImpl" value="LOG4J"/>
+	</settings>
+	<!-- 設置實體類別名 -->
 	<typeAliases>
 		<typeAlias type="com.etc.entity.Users" alias="Users"/>
-	
+		<typeAlias type="com.etc.entity.ShoppingAddress" alias="ShoppingAddress"/>
+		<typeAlias type="com.etc.entity.BankCard" alias="BankCard"/>
+		<typeAlias type="com.etc.entity.Goods" alias="Goods"/>
+		<typeAlias type="com.etc.entity.GoodsImg" alias="GoodsImg"/>
+		<typeAlias type="com.etc.entity.GoodsType" alias="GoodsType"/>
+		<typeAlias type="com.etc.entity.Mybidding" alias="Mybidding"/>
+		<typeAlias type="com.etc.entity.Order" alias="Order"/>
 	</typeAliases>
+
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC" />
@@ -28,6 +40,11 @@
 	</environments>
 	<mappers>
 		<!-- 實體類的映射xml文件 路徑 -->
-		<mapper resource="com/etc/dao/UserDao.xml" />
+		<mapper resource="com/etc/dao/AddressMapper.xml" />
+		<mapper resource="com/etc/dao/BankMapper.xml" />
+		<mapper resource="com/etc/dao/BidMapper.xml" />
+		<mapper resource="com/etc/dao/GoodsMapper.xml" />
+		<mapper resource="com/etc/dao/OrderMapper.xml" />
+		<mapper resource="com/etc/dao/UserMapper.xml" />
 	</mappers>
 </configuration>
